@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { getDatabase } from '../lib/notion';
 import Text from '../components/text';
 import styles from './index.module.css';
+import PostLink from '../components/postLink';
 
 export const databaseId = process.env?.NOTION_DATABASE_ID ?? 'NOTION_DATABASE_ID';
 
@@ -72,7 +72,7 @@ export default async function Page() {
 
             return (
               <div className="mb-4 col-lg-6 col-md-6 col-sm-12" key={post.id}>
-                <Link href={`/article/${slug}`} className={`card h-100 ${styles.postCard}`}>
+                <PostLink href={`/article/${slug}`} className={`card h-100 ${styles.postCard}`} post={post}>
                   <div className={`${styles.postImageContainer} card-img-top`}>
                     {post.coverImage && (
                       <Image
@@ -95,7 +95,7 @@ export default async function Page() {
                       </p>
                     )}
                   </div>
-                </Link>
+                </PostLink>
               </div>
             );
           })}
