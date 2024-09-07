@@ -63,28 +63,3 @@ export default async function Page({ params }) {
     </div>
   );
 }
-
-// export const getStaticPaths = async () => {
-//   const database = await getDatabase(databaseId);
-//   return {
-//     paths: database.map((page) => {
-//       const slug = page.properties.Slug?.formula?.string;
-//       return ({ params: { id: page.id, slug } });
-//     }),
-//     fallback: true,
-//   };
-// };
-
-// export const getStaticProps = async (context) => {
-//   const { slug } = context.params;
-//   const page = await getPage(id);
-//   const blocks = await getBlocks(id);
-
-//   return {
-//     props: {
-//       page,
-//       blocks,
-//     },
-//     revalidate: 1,
-//   };
-// };
