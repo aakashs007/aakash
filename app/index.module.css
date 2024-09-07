@@ -1,0 +1,133 @@
+.container {
+  padding: 0 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  padding: 40px 0 20px;
+}
+
+.header {
+  margin-bottom: 50px;
+}
+
+.header p {
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+.plus {
+  font-size: 20px;
+  margin: 0 20px;
+}
+
+.heading {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dedede;
+  text-transform: uppercase;
+  font-size: 15px;
+  opacity: 0.6;
+  letter-spacing: 0.5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .heading {
+    border-color: #343539;
+  }
+}
+
+.posts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post {
+  margin-bottom: 50px;
+}
+
+.postTitle {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.postTitle a {
+  color: inherit;
+}
+
+.postDescription {
+  margin-top: 0;
+  margin-bottom: 12px;
+  opacity: 0.65;
+}
+
+.profileImage {
+  margin-top: 50px;
+}
+
+.circular {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+.socialLink:hover {
+  background-color: #e0e0e0;
+}
+.socialLink svg {
+  width: 24px;
+  height: 24px;
+  fill: #333;
+}
+
+.postCard {
+  transition: transform 0.2s ease-in-out;
+  text-decoration: none;
+  color: inherit;
+}
+
+.postCard:hover {
+  transform: translateY(-5px);
+}
+
+.postImageContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.postTitle {
+  margin-bottom: 0.5rem;
+}
+
+.postDate {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.postDescription {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
