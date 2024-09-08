@@ -23,7 +23,9 @@ export async function generateMetadata({ params }) {
   const page = await getPageFromSlug(params?.slug);
   const title = page.properties.Title?.title[0].plain_text;
   const description = page?.properties?.Description?.rich_text[0]?.plain_text || '';
-  const coverImage = page?.cover?.external?.url;
+
+  const ogImageUrl = new URL(`${process.env.NEXT_PUBLIC_BASE_URL}/api/og`);
+  ogImageUrl.searchParams.append('slug', params.slug);
 
   return {
     title,
@@ -31,7 +33,8 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title,
       description,
-      images: coverImage ? [coverImage] : [],
+      images: [ogImageUrl.toString()],
+      author: 'Aakash Singh',
     },
   };
 }
