@@ -89,7 +89,7 @@ export function renderBlock(block) {
             height={600}
             className="mx-auto d-block img-fluid"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority
+            loading="lazy"
           />
           {caption && <figcaption>{caption}</figcaption>}
         </figure>
