@@ -19,6 +19,23 @@ export async function generateStaticParams() {
   });
 }
 
+export async function generateMetadata({ params }) {
+  const page = await getPageFromSlug(params?.slug);
+  const title = page.properties.Title?.title[0].plain_text;
+  const description = page?.properties?.Description?.rich_text[0]?.plain_text || '';
+  const coverImage = page?.cover?.external?.url;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: coverImage ? [coverImage] : [],
+    },
+  };
+}
+
 export default async function Page({ params }) {
   const page = await getPageFromSlug(params?.slug);
   const blocks = await getBlocks(page?.id);
@@ -28,21 +45,12 @@ export default async function Page({ params }) {
   }
 
   const title = page.properties.Title?.title[0].plain_text;
-  const coverImage = page?.cover?.external?.url;
-  const description = page?.properties?.Description?.rich_text[0]?.plain_text || '';
 
   return (
     <div>
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
-
-        <meta property="og:title" content={title} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://aakash-singh.vercel.app.com/article/${params.slug}`} />
-        {coverImage && <meta property="og:image" content={coverImage} />}
-        <meta property="og:description" content={description} />
-        <meta property="og:site_name" content="Aakash Singh's Blog" />
       </Head>
 
       <div className={`${styles.postImageContainer} card-img-top mb-4 mt-4`}>
