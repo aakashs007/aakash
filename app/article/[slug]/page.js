@@ -33,8 +33,15 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title,
       description,
-      images: [ogImageUrl.toString()],
+      images: ['https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200&q=75'],
       author: 'Aakash Singh',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200&q=75'],
+      creator: '@aakashsingh_dev',
     },
   };
 }
