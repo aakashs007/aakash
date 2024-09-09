@@ -9,6 +9,7 @@ import {
 import Text from '../../../components/text';
 import { renderBlock } from '../../../components/notion/renderer';
 import styles from '../../../styles/post.module.css';
+import { optimizeImageUrl } from '../../../helper/util';
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
@@ -24,8 +25,8 @@ export async function generateMetadata({ params }) {
   const title = page.properties.Title?.title[0].plain_text;
   const description = page?.properties?.Description?.rich_text[0]?.plain_text || '';
 
-  const ogImageUrl = new URL(`${process.env.NEXT_PUBLIC_BASE_URL}/api/og`);
-  ogImageUrl.searchParams.append('slug', params.slug);
+  const coverImage = page?.cover?.external?.url;
+  const optimizedCoverImage = coverImage ? optimizeImageUrl(coverImage) : null;
 
   return {
     title,
@@ -33,14 +34,14 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title,
       description,
-      images: ['https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200&q=75'],
+      images: [optimizedCoverImage],
       author: 'Aakash Singh',
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: ['https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200&q=75'],
+      images: [optimizedCoverImage],
       creator: '@aakashsingh_dev',
     },
   };
