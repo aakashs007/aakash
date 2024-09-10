@@ -66,9 +66,7 @@ export default async function Page() {
               },
             );
             const slug = post.properties?.Slug?.rich_text[0]?.text?.content;
-            const published = post.properties?.Published?.checkbox;
             const description = post.properties?.Description?.rich_text[0]?.plain_text;
-            if (!published) return null;
 
             return (
               <div className="mb-4 col-lg-6 col-md-6 col-sm-12" key={post.id}>
