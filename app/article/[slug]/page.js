@@ -11,6 +11,8 @@ import { renderBlock } from '../../../components/notion/renderer';
 import styles from '../../../styles/post.module.css';
 import { optimizeImageUrl } from '../../../helper/util';
 
+export const revalidate = Number(process.env.RAVALIDATION_TIME_IN_SEC); // invalidate every hour
+
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
   const database = await getDatabase();
