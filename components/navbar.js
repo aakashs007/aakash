@@ -2,9 +2,15 @@
 
 import Link from 'next/link';
 
+const navStyle = {
+  position: 'fixed',
+  width: '100%',
+  top: '0',
+};
+
 function Navbar() {
   return (
-    <nav className="navbar bg-body-tertiary">
+    <nav style={navStyle} className="navbar bg-body-tertiary">
       <div className="container-fluid">
         <Link href="/" className="navbar-brand">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-house-fill" viewBox="0 0 16 16">

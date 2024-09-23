@@ -1,7 +1,5 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-
 import Image from 'next/image';
 import {
   getDatabase, getBlocks, getPageFromSlug,
@@ -66,7 +64,7 @@ export default async function Page({ params }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={`${styles.postImageContainer} card-img-top mb-4 mt-4`}>
+      <div className={`${styles.postImageContainer} card-img-top mb-4 mt-5`}>
         {page?.cover?.external?.url && (
           <Image
             src={page?.cover?.external?.url}
@@ -87,9 +85,6 @@ export default async function Page({ params }) {
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
-          <Link href="/" className={styles.back}>
-            ← Go home
-          </Link>
         </section>
       </article>
     </div>

@@ -16,6 +16,11 @@
   transition: background-color 0.3s ease;
 }
 
+footer .socialLink {
+  width: 32px !important;
+  height: 32px !important;
+}
+
 .socialLink:hover svg {
   fill: currentColor; /* Use currentColor to inherit the text color */
 }

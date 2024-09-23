@@ -21,7 +21,7 @@ export default async function Page() {
   return (
     <div>
       <main className={styles.container}>
-        <header className={styles.header} style={{ marginTop: '50px' }}>
+        <header className={styles.header} style={{ marginTop: '80px' }}>
           <h1>Hey, I am Aakash</h1>
           <p>
             I am a software engineer and a full stack developer. I love to build
