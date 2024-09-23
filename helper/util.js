@@ -17,6 +17,10 @@ export function optimizeImageUrl(url) {
   return url;
 }
 
-export function add(a, b) {
-  return a + b;
+export function daysPassed(d1, d2) {
+  if (d1 - d2 < 0) return 0;
+
+  const diff = (d1 - d2) / 1000; // in seconds
+  const hours = Math.floor(diff / 3600);
+  return hours / 24;
 }

@@ -2,13 +2,21 @@
 
 import { useEffect, useState } from 'react';
 import styles from './index.module.css';
+import { daysPassed } from '../../helper/util';
 
 export default function SubscribeButton() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
+    let lastTime = localStorage.getItem('lastTime');
+    const currentTime = new Date().getTime();
+
     setTimeout(() => {
-      setShow(true);
+      if (!lastTime || daysPassed(currentTime, lastTime) > 4) {
+        setShow(true);
+        lastTime = new Date().getTime();
+        localStorage.setItem('lastTime', lastTime);
+      }
     }, 5000);
   }, []);
 

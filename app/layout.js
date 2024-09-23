@@ -4,6 +4,7 @@ import Script from 'next/script';
 import ThemeInitializer from '../components/themeInitializer';
 import Navbar from '../components/navbar';
 import SubscribeButton from '../components/subscribeBtn';
+import Footer from '../components/footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
         <ThemeInitializer />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
