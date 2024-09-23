@@ -6,6 +6,7 @@ const navStyle = {
   position: 'fixed',
   width: '100%',
   top: '0',
+  zIndex: '202',
 };
 
 function Navbar() {
