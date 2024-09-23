@@ -64,7 +64,7 @@ export default async function Page({ params }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={`${styles.postImageContainer} card-img-top mb-4 mt-5`}>
+      <div className={`${styles.postImageContainer} card-img-top mb-4 mt-4`}>
         {page?.cover?.external?.url && (
           <Image
             src={page?.cover?.external?.url}

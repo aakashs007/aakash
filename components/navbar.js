@@ -3,10 +3,10 @@
 import Link from 'next/link';
 
 const navStyle = {
-  position: 'fixed',
+  position: 'sticky',
   width: '100%',
   top: '0',
-  zIndex: '202',
+  zIndex: '99',
 };
 
 function Navbar() {
