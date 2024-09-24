@@ -1,0 +1,9 @@
+[data-bs-theme="light"] .footerCls {
+  background: #f8f9fa;
+  padding: 20px;
+}
+
+[data-bs-theme="dark"] .footerCls {
+  background: #2b3036;
+  padding: 20px;
+}

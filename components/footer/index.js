@@ -1,9 +1,10 @@
-import SocialBtns from './socialBtns';
+import SocialBtns from '../socialBtns';
+import styles from './index.module.css';
 
-export default function Footer() {
+function Footer() {
   return (
-    <footer>
-      <div className="container-fluid p-lg-5 p-sm-4" style={{ padding: '20px', background: '#2b3036' }}>
+    <footer className="mt-4">
+      <div className={`container-fluid p-lg-5 p-sm-4 ${styles.footerCls}`}>
         <h6 className="mb-3">
           <span style={{ color: '#ff6719' }}>Follow</span>
           {' '}
@@ -34,3 +35,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer;
